@@ -1,0 +1,10 @@
+.layout {
+  display: grid;
+  grid-template-columns: 250px auto;
+  align-items: flex-start;
+}
+
+.content {
+  display: block;
+  padding: 1.4rem;
+}

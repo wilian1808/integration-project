@@ -1,0 +1,167 @@
+.content {
+  display: block;
+  width: 100%;
+}
+
+.card {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1124px;
+}
+
+.title {
+  display: block;
+  font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
+  text-align: center;
+  color: #fff;
+  margin: 2rem 0;
+  font-size: 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.form {
+  display: grid;
+  margin: 0 auto 0 auto;
+  width: 340px;
+  gap: 1.4rem;
+}
+
+.form_label {
+  display: block;
+  font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
+  font-size: .9rem;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+.form_span {
+  color: #a4ff65;
+  margin-left: .4rem;
+}
+
+.form_input {
+  display: block;
+  width: 100%;
+  margin-top: .6rem;
+  border: solid 1px #242424;
+  background-color: transparent;
+  background-color: #242424;
+  font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
+  font-size: 1rem;
+  color: #fff;
+  padding: .6rem 1rem;
+  border-radius: .3rem;
+}
+
+.form_alert {
+  display: block;
+  color: #F96666;
+  font-size: .84rem;
+  margin-top: 1.2rem;
+  font-weight: 500;
+}
+
+.form_submit {
+  font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
+  font-size: .9rem;
+  padding: .6rem 1rem;
+  border-radius: .3rem;
+  background-color: #a4ff65;
+  border: 1px solid #a4ff65;
+  color: #242424;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.form_submit:active {
+  transform: scale(.99);
+}
+
+.subtitle {
+  display: block;
+  max-width: 340px;
+  color: #fff;
+  font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
+  text-align: center;
+  margin: 2rem auto;
+  text-transform: uppercase;
+  font-size: .86rem;
+  font-weight: 600;
+  position: relative;
+}
+
+.subtitle::before,
+.subtitle::after {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 44%;
+  background-color: #242424;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.subtitle::after {
+  right: 0;
+}
+
+.options {
+  display: flex;
+  width: 340px;
+  margin: 0 auto;
+  gap: 1.4rem;
+}
+
+.button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
+  gap: 1rem;
+  padding: .6rem 1rem;
+  justify-content: center;
+  font-size: .9rem;
+  font-weight: 500;
+  border: none;
+  border-radius: .3rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: solid 1px #242424;
+  color: #ffffff;
+}
+
+.button:hover {
+  background-color: #242424;
+}
+
+.button:active {
+  transform: scale(.98);
+}
+
+.button_icon {
+  display: block;
+  width: 1rem;
+}
+
+.login {
+  display: block;
+  max-width: 340px;
+  text-align: center;
+  margin: 2rem auto;
+  font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
+  font-size: 1rem;
+  color: #a4ff65;
+  font-weight: 500;
+  font-size: .84rem;
+  cursor: pointer;
+}

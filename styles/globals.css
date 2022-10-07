@@ -1,26 +1,53 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@font-face {
+  font-family: 'Urbanist';
+  src: url('../assets/Urbanist.woff2') format('woff2');
+  font-weight: 1 1000;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+  --color-sea: #92B8A6;
+  --color-dark: #131417;
+  --color-gray: #e9eaec;
+  --color-lime: #a9cf6d;
+  --color-green: #03c39a;
+  --color-white: #ffffff;
+  --color-olive: #c7cdc6;
+  --color-yellow: #fccf6d;
+  --color-blue: #1c2939;
+
+  --color-alt: #cbcbcb;
+
+  --spacing: .4px;
+  
+  --font-primary: 'Urbanist';
+  
+  --color-lime: #bffd7d;
 }
 
 * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+*,
+*:hover,
+*:focus,
+*:active {
+  outline: none;
+  box-shadow: none;
+}
+
+body {
+  background-color: #D6DBDF;
+  background-color: #ffffff;
+  background-color: var(--color-dark);
+  background-color: #0a0a0a;
 }
