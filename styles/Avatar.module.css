@@ -1,19 +1,32 @@
-.title {
-  font-family: var(--font-primary);
-  letter-spacing: var(--spacing);
-  text-transform: capitalize;
-  font-size: 1rem;
-  margin-bottom: 1.4rem;
-  color: #ffffff;
-  font-weight: 600;
+/* ----------- content ------------- */
+
+.content {
+  display: grid;
+  /* justify-content: center; */
 }
 
-.avatar {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  gap: 1.2rem;
+/* ----------- title ------------- */
+
+.title {
+  display: block;
+  font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
+  font-size: .9rem;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: .6rem;
 }
+
+/* ----------- form ------------- */
+
+.form {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  align-items: flex-end;
+}
+
+/* ----------- photo ------------- */
 
 .photo {
   display: flex;
@@ -29,10 +42,21 @@
   background-color: #242424;
 }
 
-.options {
-  display: grid;
-  gap: 1.2rem;
+.photo_icon {
+  display: block;
+  width: 1.4rem;
+  width: 1.6rem;
+  fill: #cbcbcb;
 }
+
+/* ----------- options ------------- */
+
+.options {
+  display: flex;
+  gap: 1.4rem;
+}
+
+/* ----------- buttons ------------- */
 
 .label,
 .delete {
@@ -48,25 +72,17 @@
 }
 
 .label {
-  background-color: #a4ff65;
-  color: #0a0a0a;
+  background-color: #242424;
+  color: #a9cf6d;
+  color: #a4ff65;
+  color: var(--color-green);
 }
 
 .delete {
   background-color: #242424;
   color: #F96666;
-  /* background-color: #F96666;
-  color: #0a0a0a; */
 }
 
 .label_input {
   display: none;
-}
-
-.question {
-  display: block;
-  width: 1.4rem;
-  width: 3rem;
-  fill: var(--color-sea);
-  fill: #0a0a0a;
 }

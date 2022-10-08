@@ -1,15 +1,34 @@
-.content {
-  margin: 0 auto;
-  width: 400px;
+/* ----------- profile ----------- */
+
+.profile {
+  padding: 1.4rem 0;
+  display: grid;
+  justify-content: center;
+  gap: 1.4rem;
 }
 
+/* ----------- title ----------- */
+
+.title {
+  display: block;
+  font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  /* margin: 2rem 0; */
+}
+
+/* ----------- form ----------- */
 
 .form {
-  display: grid;
-  margin-top: 1.4rem;
-  width: 340px;
   width: 400px;
+  display: grid;
   gap: 1.4rem;
+  border-top: solid 1px #242424;
+  padding-top: 1.4rem;
 }
 
 .form_label {
@@ -29,9 +48,7 @@
 .form_input {
   display: block;
   width: 100%;
-  margin-top: .6rem;
   border: solid 1px #242424;
-  background-color: transparent;
   background-color: #242424;
   font-family: var(--font-primary);
   letter-spacing: var(--spacing);
@@ -39,6 +56,7 @@
   color: #fff;
   padding: .6rem 1rem;
   border-radius: .3rem;
+  margin-top: .6rem;
 }
 
 .form_submit {
@@ -47,9 +65,35 @@
   font-size: .9rem;
   padding: .6rem 1rem;
   border-radius: .3rem;
+  border: 1px solid #a9cf6d;
   background-color: #a4ff65;
-  border: 1px solid #a4ff65;
   color: #242424;
   font-weight: 500;
   cursor: pointer;
+}
+
+.form_submit:disabled {
+  background-color: #cbcbcb;
+  border-color: #cbcbcb;
+  cursor: wait;
+}
+
+/* --------- logout button --------- */
+
+.logout {
+  display: block;
+  font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
+  font-size: .84rem;
+  font-size: .9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #F96666;
+  margin: 0 auto;
+}
+
+.logout:hover {
+  text-decoration: underline;
 }

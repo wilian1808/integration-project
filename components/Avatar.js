@@ -2,6 +2,7 @@ import supabase from 'libs/supabase'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import styles from 'styles/Avatar.module.css'
+import PhotoIcon from 'ui/PhotoIcon'
 
 export default function Avatar () {
   const [avatar, setAvatar] = useState(null)
@@ -10,8 +11,6 @@ export default function Avatar () {
   useEffect(() => {
     getDataUser()
   }, [])
-
-  console.log('cambiando')
 
   const getDataUser = async () => {
     const user = supabase.auth.user()
@@ -57,7 +56,7 @@ export default function Avatar () {
         .upload(filePath, file)
 
       if (error) throw error
-      // recive un objeto con los cambios
+
       const updates = {
         id: user.id,
         avatar: filePath,
@@ -83,30 +82,23 @@ export default function Avatar () {
 
   return (
     <div className={styles.content}>
-      {/* <h2 className={styles.title}>update avatar</h2> */}
-      <section className={styles.avatar}>
-        <div className={styles.photo}>
+      <span className={styles.title}>avatar</span>
+
+      <section className={styles.form}>
+        <article className={styles.photo}>
           { avatar
             ? <Image src={avatar} alt='photo profile' layout='fill' />
-            : <svg className={styles.question} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <g data-name="Layer 2">
-                <g data-name="question-mark">
-                  <rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/>
-                  <path d="M17 9A5 5 0 0 0 7 9a1 1 0 0 0 2 0 3 3 0 1 1 3 3 1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-1.1A5 5 0 0 0 17 9z"/>
-                  <circle cx="12" cy="19" r="1"/>
-                </g>
-              </g>
-            </svg>
+            : <PhotoIcon className={styles.photo_icon} />
           }
-        </div>
-        <div className={styles.options}>
+        </article>
+
+        <article className={styles.options}>
           <label className={styles.label}>
             <input className={styles.label_input} onChange={updatePhoto} type='file' accept='image/*' />
-            {/* change photo */}
             {uploading ? 'uploading ...' : 'upload photo'}
           </label>
           <button className={styles.delete}>remove photo</button>
-        </div>
+        </article>
       </section>
     </div>
   )

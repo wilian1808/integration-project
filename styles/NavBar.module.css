@@ -1,35 +1,41 @@
+/* ------------ navbar ------------ */
+
 .navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
+  display: block;
   width: 100%;
   border-bottom: solid 1px #242424;
-  align-items: center;
-  height: 5rem;
-  padding: 0 1.4rem;
-  justify-content: flex-end;
-  justify-content: space-between;
-  gap: 1rem;
 }
 
-.button {
+.navbar_content {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  width: 2.26rem;
-  height: 2.26rem;
-  border: none;
-  background-color: #242424;
-  cursor: pointer;
-  border-radius: .3rem;
+  width: 90%;
+  max-width: 1124px;
+  margin: 0 auto;
+  height: 5rem;
 }
 
-.button_icon {
-  display: block;
-  width: 1.2rem;
-  fill: #ffffff;
+/* ------------ title navbar ------------ */
+
+.navbar_title {
+  display: flex;
+  font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  gap: .4rem;
+  align-items: center;
 }
+
+.navbar_icon {
+  width: 1.3rem;
+  fill: #a9cf6d;
+  fill: #a4ff65;
+}
+
+/* ------------ options layout ------------ */
 
 .options {
   display: flex;
@@ -37,35 +43,7 @@
   gap: 1rem;
 }
 
-/* start avatar */
-
-.options_fullname {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.26rem;
-  height: 2.26rem;
-  position: relative;
-  border: none;
-  border-radius: .3rem;
-  cursor: pointer;
-  overflow: hidden;
-  background-color: #a4ff65;
-}
-
-.options_fullname::after {
-  content: attr(data-label);
-  color: #0a0a0a;
-  font-weight: 600;
-  font-family: var(--font-primary);
-  font-size: .9rem;
-}
-
-.avatar {
-  display: block;
-}
-
-/* end avatar */
+/* ------------ notification button ------------ */
 
 .notification {
   display: flex;
@@ -83,4 +61,30 @@
   display: block;
   width: 1rem;
   fill: #ffffff;
+}
+
+/* ------------ profile button ------------ */
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.26rem;
+  height: 2.26rem;
+  position: relative;
+  border: none;
+  border-radius: .3rem;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #a9cf6d;
+  background-color: #242424;
+}
+
+.profile::after {
+  content: attr(data-label);
+  color: #0a0a0a;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  font-size: .84rem;
+  color: #a9cf6d;
 }
