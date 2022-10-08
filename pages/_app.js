@@ -2,7 +2,6 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import supabase from 'libs/supabase'
 import 'styles/globals.css'
-import { AuthProvider } from 'context/auth'
 
 export default function MyApp ({ Component, pageProps }) {
   const router = useRouter()
@@ -25,9 +24,5 @@ export default function MyApp ({ Component, pageProps }) {
     }
   }, [router])
 
-  return (
-    <AuthProvider>
-      <Component {...pageProps} />
-    </AuthProvider>
-  )
+  return <Component {...pageProps} />
 }

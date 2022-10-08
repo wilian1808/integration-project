@@ -1,44 +1,34 @@
 import supabase from 'libs/supabase'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import styles from 'styles/NavBar.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import SchoolIcon from 'ui/SchoolIcon'
 import BellIcon from 'ui/BellIcon'
+import { ProfileContext } from 'context/profile'
 
 export default function NavBar () {
-  const [avatar, setAvatar] = useState(null)
+  const [pathname, setPathname] = useState(null)
+  const { avatar } = useContext(ProfileContext)
 
   useEffect(() => {
-    getAvatar()
-  }, [])
+    downloadPhoto(avatar)
+  }, [avatar])
 
-  const getAvatar = async () => {
-    const user = supabase.auth.user()
-    // obtenemos los datos
-    try {
-      const { error, data, status } = await supabase.from('profiles')
-        .select('avatar')
-        .eq('id', user.id)
-        .single()
+  const downloadPhoto = async path => {
+    if (path) {
+      try {
+        const { data, error } = await supabase.storage
+          .from('avatars')
+          .download(path)
 
-      if (error && status !== 406) throw error
-      if (data) downloadFile(data.avatar)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  const downloadFile = async path => {
-    try {
-      const { data, error } = await supabase.storage
-        .from('avatars')
-        .download(path)
-
-      if (error) throw error
-      setAvatar(URL.createObjectURL(data))
-    } catch (error) {
-      console.log(error)
+        if (error) throw error
+        setPathname(URL.createObjectURL(data))
+      } catch (error) {
+        console.log(error)
+      }
+    } else {
+      setPathname(null)
     }
   }
 
@@ -59,7 +49,7 @@ export default function NavBar () {
           </button>
 
           <button data-label="WC" className={styles.profile}>
-            { avatar && <Image src={avatar} alt='avatar user' layout='fill' /> }
+            { pathname && <Image src={pathname} alt='avatar user' layout='fill' /> }
           </button>
         </section>
 

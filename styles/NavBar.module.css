@@ -85,6 +85,7 @@
   color: #0a0a0a;
   font-weight: 600;
   font-family: var(--font-primary);
+  letter-spacing: var(--spacing);
   font-size: .84rem;
   color: #a9cf6d;
 }
