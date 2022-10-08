@@ -4,7 +4,6 @@ import styles from 'styles/Profile.module.css'
 import { useEffect, useState } from 'react'
 import supabase from 'libs/supabase'
 import signOut from 'libs/signOut'
-import Ava from 'components/Ava'
 
 export default function Profile () {
   const [fullname, setFullname] = useState('')
@@ -62,8 +61,6 @@ export default function Profile () {
     <Layout>
       <section className={styles.profile}>
         <h2 className={styles.title}>Update Data Profile</h2>
-
-        {/* <Ava /> */}
 
         <Avatar path={avatar} />
 
