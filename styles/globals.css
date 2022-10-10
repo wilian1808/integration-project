@@ -53,3 +53,13 @@ body {
   background-color: var(--color-dark);
   background-color: #0a0a0a;
 }
+
+
+::-webkit-scrollbar {
+  width: .4rem;
+  background-color: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #242424;
+}
