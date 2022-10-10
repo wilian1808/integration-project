@@ -11,6 +11,10 @@ export default function Profile () {
   const [avatar, setAvatar] = useState('')
   const [loading, setLoading] = useState(false)
 
+  // start test
+  console.log(supabase.auth.user())
+  // end test
+
   useEffect(() => {
     getData()
   }, [])

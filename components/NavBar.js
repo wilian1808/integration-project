@@ -36,14 +36,19 @@ export default function NavBar () {
 
   const generateNameAvatar = () => {
     const user = supabase.auth.user()
-    const fullname = user.user_metadata.full_name
-    const response = fullname
+
+    if (user.app_metadata.provider === 'email') {
+      const response = user.email.slice(0, 2).toUpperCase()
+      return setTargetName(response)
+    }
+
+    const response = user.user_metadata.full_name
       .split(' ')
       .at(0)
       .slice(0, 2)
       .toUpperCase()
 
-    setTargetName(response)
+    return setTargetName(response)
   }
 
   return (
