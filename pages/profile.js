@@ -60,7 +60,9 @@ export default function Profile () {
   return (
     <Layout>
       <section className={styles.profile}>
-        <h2 className={styles.title}>Update Data Profile</h2>
+        <h2 className={styles.title}>
+          Update Data Profile
+        </h2>
 
         <Avatar path={avatar} />
 

@@ -1,8 +1,10 @@
 /* ----------- content ------------- */
 
 .content {
-  display: grid;
-  /* justify-content: center; */
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
 }
 
 /* ----------- title ------------- */
@@ -13,6 +15,7 @@
   letter-spacing: var(--spacing);
   font-size: .9rem;
   color: #ffffff;
+  color: #acacac;
   text-transform: capitalize;
   margin-bottom: .6rem;
 }
@@ -54,6 +57,12 @@
 .options {
   display: flex;
   gap: 1.4rem;
+}
+
+@media screen and (max-width: 450px) {
+  .options {
+    display: grid;
+  }
 }
 
 /* ----------- buttons ------------- */

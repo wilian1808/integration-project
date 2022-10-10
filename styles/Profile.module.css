@@ -3,7 +3,6 @@
 .profile {
   padding: 1.4rem 0;
   display: grid;
-  justify-content: center;
   gap: 1.4rem;
 }
 
@@ -11,6 +10,7 @@
 
 .title {
   display: block;
+  width: 100%;
   font-family: var(--font-primary);
   letter-spacing: var(--spacing);
   text-align: center;
@@ -18,13 +18,14 @@
   font-size: 2rem;
   font-size: 1.4rem;
   font-weight: 600;
-  /* margin: 2rem 0; */
 }
 
 /* ----------- form ----------- */
 
 .form {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
   display: grid;
   gap: 1.4rem;
   border-top: solid 1px #242424;
@@ -37,6 +38,7 @@
   letter-spacing: var(--spacing);
   font-size: .9rem;
   color: #ffffff;
+  color: #acacac;
   text-transform: capitalize;
 }
 
@@ -82,6 +84,7 @@
 
 .logout {
   display: block;
+  width: 100%;
   font-family: var(--font-primary);
   letter-spacing: var(--spacing);
   font-size: .84rem;
@@ -92,6 +95,7 @@
   background-color: transparent;
   color: #F96666;
   margin: 0 auto;
+  padding: .6rem 0;
 }
 
 .logout:hover {

@@ -6,6 +6,8 @@ import GoogleIcon from 'ui/GoogleIcon'
 import signInWithProvider from 'libs/signInWithProvider'
 import styles from 'styles/login.module.css'
 import Link from 'next/link'
+import NotionIcon from 'ui/NotionIcon'
+import SpotifyIcon from 'ui/SpotifyIcon'
 
 export default function Login () {
   const [valid, setValid] = useState(false)
@@ -63,10 +65,12 @@ export default function Login () {
               <GoogleIcon className={styles.button_icon} />
               Google
             </button>
-            <button onClick={() => signInWithProvider('apple')} className={styles.button}>
-              <AppleIcon className={styles.button_icon} />
-              Apple
+
+            <button onClick={() => signInWithProvider('spotify')} className={styles.button}>
+              <SpotifyIcon className={styles.button_icon} />
+              spotify
             </button>
+
           </section>
         </section>
 

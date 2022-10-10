@@ -83,13 +83,9 @@ export default function Register () {
               <GoogleIcon className={styles.button_icon} />
               Google
             </button>
-            {/* <button className={styles.button}>
+            <button onClick={() => signInWithProvider('spotify')} className={styles.button}>
               <SpotifyIcon className={styles.button_icon} />
-              Spotify
-            </button> */}
-            <button onClick={() => signInWithProvider('apple')} className={styles.button}>
-              <AppleIcon className={styles.button_icon} />
-              Apple
+              spotify
             </button>
           </section>
         </section>

@@ -10,9 +10,11 @@ import { ProfileContext } from 'context/profile'
 export default function NavBar () {
   const [pathname, setPathname] = useState(null)
   const { avatar } = useContext(ProfileContext)
+  const [targetName, setTargetName] = useState(null)
 
   useEffect(() => {
     downloadPhoto(avatar)
+    generateNameAvatar()
   }, [avatar])
 
   const downloadPhoto = async path => {
@@ -32,8 +34,20 @@ export default function NavBar () {
     }
   }
 
+  const generateNameAvatar = () => {
+    const user = supabase.auth.user()
+    const fullname = user.user_metadata.full_name
+    const response = fullname
+      .split(' ')
+      .at(0)
+      .slice(0, 2)
+      .toUpperCase()
+
+    setTargetName(response)
+  }
+
   return (
-    <header className={styles.navbar}>
+    <header className={styles.navbar} >
       <div className={styles.navbar_content}>
 
         <Link href='/profile'>
@@ -48,7 +62,7 @@ export default function NavBar () {
             <BellIcon className={styles.notification_icon} />
           </button>
 
-          <button data-label="WC" className={styles.profile}>
+          <button data-label={targetName} className={styles.profile}>
             { pathname && <Image src={pathname} alt='avatar user' layout='fill' /> }
           </button>
         </section>

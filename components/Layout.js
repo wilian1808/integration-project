@@ -7,7 +7,9 @@ export default function Layout ({ children }) {
     <ProfileProvider>
       <div className={styles.layout}>
         <NavBar />
-        <main className={styles.main}>{children}</main>
+        <main className={styles.main}>
+          {children}
+        </main>
       </div>
     </ProfileProvider>
   )
