@@ -1,12 +1,10 @@
 import Header from 'components/Header'
 import supabase from 'libs/supabase'
 import { useState } from 'react'
-import AppleIcon from 'ui/AppleIcon'
 import GoogleIcon from 'ui/GoogleIcon'
 import signInWithProvider from 'libs/signInWithProvider'
 import styles from 'styles/login.module.css'
 import Link from 'next/link'
-import NotionIcon from 'ui/NotionIcon'
 import SpotifyIcon from 'ui/SpotifyIcon'
 
 export default function Login () {

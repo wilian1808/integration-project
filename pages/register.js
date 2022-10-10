@@ -1,6 +1,5 @@
 import Header from 'components/Header'
 import supabase from 'libs/supabase'
-import AppleIcon from 'ui/AppleIcon'
 import GoogleIcon from 'ui/GoogleIcon'
 import signInWithProvider from 'libs/signInWithProvider'
 
