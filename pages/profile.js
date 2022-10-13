@@ -4,6 +4,7 @@ import styles from 'styles/Profile.module.css'
 import { useEffect, useState } from 'react'
 import supabase from 'libs/supabase'
 import signOut from 'libs/signOut'
+import Head from 'next/head'
 
 export default function Profile () {
   const [fullname, setFullname] = useState('')
@@ -63,6 +64,11 @@ export default function Profile () {
 
   return (
     <Layout>
+      <Head>
+        <meta name="theme-color" content="#0a0a0a" />
+        <title>Schooldev - Profile</title>
+      </Head>
+
       <section className={styles.profile}>
         <h2 className={styles.title}>
           Update Data Profile

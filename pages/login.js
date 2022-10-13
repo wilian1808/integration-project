@@ -6,6 +6,7 @@ import signInWithProvider from 'libs/signInWithProvider'
 import styles from 'styles/login.module.css'
 import Link from 'next/link'
 import SpotifyIcon from 'ui/SpotifyIcon'
+import Head from 'next/head'
 
 export default function Login () {
   const [valid, setValid] = useState(false)
@@ -34,6 +35,11 @@ export default function Login () {
 
   return (
     <div>
+      <Head>
+        <meta name="theme-color" content="#0a0a0a" />
+        <title>Schooldev - Login</title>
+      </Head>
+
       <Header />
       <div className={styles.content}>
         <section className={styles.card}>

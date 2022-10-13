@@ -2,7 +2,7 @@ import Header from 'components/Header'
 import supabase from 'libs/supabase'
 import GoogleIcon from 'ui/GoogleIcon'
 import signInWithProvider from 'libs/signInWithProvider'
-
+import Head from 'next/head'
 import styles from 'styles/register.module.css'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -48,6 +48,11 @@ export default function Register () {
 
   return (
     <div>
+      <Head>
+        <meta name="theme-color" content="#0a0a0a" />
+        <title>Schooldev - Register</title>
+      </Head>
+
       <Header />
       <div className={styles.content}>
         <section className={styles.card}>
