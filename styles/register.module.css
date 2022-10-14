@@ -67,6 +67,14 @@
   font-weight: 500;
 }
 
+.form_success {
+  display: block;
+  color: var(--color-green);
+  font-size: .84rem;
+  margin-top: 1.2rem;
+  font-weight: 500;
+}
+
 .form_submit {
   font-family: var(--font-primary);
   letter-spacing: var(--spacing);

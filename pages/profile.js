@@ -12,10 +12,6 @@ export default function Profile () {
   const [avatar, setAvatar] = useState('')
   const [loading, setLoading] = useState(false)
 
-  // start test
-  console.log(supabase.auth.user())
-  // end test
-
   useEffect(() => {
     getData()
   }, [])
@@ -50,7 +46,7 @@ export default function Profile () {
       const { error } = await supabase.from('profiles').upsert({
         id: user.id,
         username,
-        fullname,
+        fullname: fullname.toLowerCase(),
         updated_at: new Date()
       })
 

@@ -11,6 +11,7 @@ import SpotifyIcon from 'ui/SpotifyIcon'
 export default function Register () {
   const [loading, setLoading] = useState(false)
   const [valid, setValid] = useState(false)
+  const [success, setSuccess] = useState(false)
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('the password does not match')
 
@@ -31,13 +32,26 @@ export default function Register () {
 
     try {
       setLoading(true)
+      setValid(false)
+      setSuccess(false)
+
       if (password !== confirm) throw new Error('las contraseñas no coinciden')
-      const { error } = await supabase.auth.signUp({ email, password })
-      console.log(error)
-      if (error) {
-        setMessage(error.message)
-        setValid(!valid)
-        throw error
+      const { user, error } = await supabase.auth.signUp({ email, password })
+
+      if (error) throw error
+
+      if (user.identities.length === 0) {
+        setMessage('email already used')
+        setValid(true)
+        throw new Error('email already used')
+      }
+
+      if (user.identities.length === 1) {
+        event.target.email.value = ''
+        event.target.confirm.value = ''
+        setPassword('')
+        setMessage('confirm your email')
+        setSuccess(true)
       }
     } catch (error) {
       console.log(error)
@@ -75,6 +89,9 @@ export default function Register () {
               <input onKeyUp={validatePassword} className={styles.form_input} type='password' name='confirm' placeholder='Confirm Password' required />
               { valid &&
                 <span className={styles.form_alert}>{message}</span>
+              }
+              { success &&
+                <span className={styles.form_success}>{message}</span>
               }
             </label>
             <input disabled={loading} className={styles.form_submit} type='submit' value='Register' />

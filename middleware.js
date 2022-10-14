@@ -10,7 +10,7 @@ export default async function middleware (request) {
   // obtenemos la cookie
   const authCookie = await request.cookies.get('sb-access-token')
   // si existe un usuario se bloquean algunas paginas
-  if (pathname === '/login' || pathname === '/register' || pathname === '/') {
+  if (pathname === '/' || pathname === '/login' || pathname === '/register') {
     if (authCookie) return NextResponse.redirect(new URL('/profile', request.url))
   }
   // si no existe un usuario redirigimos al login
